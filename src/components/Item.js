@@ -21,7 +21,15 @@ export function Item(props) {
     MUTATION_ADD_ITEM_TO_CART,
     { variables: { id: props.id } }
   )
-  const { data } = useQuery(QUERY_CURRENT_CURRENCY)
+  const { data } = useQuery(QUERY_CURRENT_CURRENCY);
+  const testing = () => {
+      const a = 1
+      const b = 2
+      const c = 3
+      const d = a + b
+      const e = c + d
+      console.log(e)
+    }
 
   return (
     <Card size='small'>
@@ -37,6 +45,9 @@ export function Item(props) {
       <Card.Content as={Button} onClick={addItemToCart}>
         Add to Cart
       </Card.Content>
+        <Button onClick={testing}>
+            TESTING DEBUGGER
+        </Button>
     </Card>
   )
 }
